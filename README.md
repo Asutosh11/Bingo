@@ -57,10 +57,11 @@ The project integrates with a REST API endpoint:
 ```
 Testing Home Address API...
 Payload: {type=home, street=123 Main Street, city=New York, state=NY, zipCode=10001, country=USA}
-2025-08-05 21:06:23 INFO HttpClient - REQUEST: https://composekmp.free.beeceptor.com/addaddress
+HttpClient - REQUEST URL: https://composekmp.free.beeceptor.com/addaddress
 METHOD: HttpMethod(value=POST)
 
-Response: Address added
+Response: 
+{ "status": "Address added"}
 
 All API tests completed successfully!
 Resources cleaned up
