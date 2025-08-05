@@ -1,10 +1,10 @@
-# 🎯 Bingo - Kotlin Multiplatform Address API Client
+# 🎯 Bingo
 
 A **Kotlin Multiplatform** project demonstrating API integration using **Ktor Client** for cross-platform networking.
 
 ## 🚀 Features
 
-- **Cross-Platform**: Built with Kotlin Multiplatform (KMP) for Android, iOS, and JVM
+- **Cross-Platform**: Built with Kotlin Multiplatform (KMP) for Android and iOS.
 - **Networking**: Uses Ktor Client for HTTP requests with built-in logging
 
 ## 🏗️ Architecture
