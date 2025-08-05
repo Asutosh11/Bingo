@@ -32,6 +32,20 @@ The project integrates with a REST API endpoint:
 **Base URL**: `https://composekmp.free.beeceptor.com`  
 **Endpoint**: `POST /addaddress`
 
+### Request Model Contract
+```json
+{
+  "data": {
+    "street": "123 Main Street",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10001",
+    "country": "USA",
+    "type": "home"
+  }
+}
+```
+
 ## 🖥️ Application Output
 
 ```
@@ -55,4 +69,3 @@ Work address added: Address added
 
 ✅ All API tests completed successfully!
 🧹 Resources cleaned up
-```
