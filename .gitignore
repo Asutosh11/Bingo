@@ -8,3 +8,21 @@ captures
 .cxx
 local.properties
 xcuserdata
+
+# Kotlin compiler sessions and temporary files
+.kotlin/
+*.tmp
+*.temp
+*.log
+
+# Additional Android/Gradle temporary files
+*.hprof
+.navigation/
+lint-results*.xml
+lint-results*.html
+lint-baseline.xml
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
