@@ -23,6 +23,17 @@ A **Kotlin Multiplatform** library for validating and adding addresses.
   **Base URL**: `https://composekmp.free.beeceptor.com`  
   **Endpoint**: `POST /addaddress`
 
+  **Example API Logs**:
+  ```
+  Request: {type=home, street=123 Main Street, city=New York, state=NY, zipCode=10001, country=USA}
+  2025-08-05 21:06:23 INFO HttpClient - REQUEST: https://composekmp.free.beeceptor.com/addaddress
+  METHOD: HttpMethod(value=POST)
+  2025-08-05 21:06:24 INFO HttpClient - RESPONSE: 200 OK
+  Response: { "status": "Address added" }
+  ```
+
+
+
 ## 📚 Library Integration
 
 For detailed integration instructions and usage examples, see the [**Library Integration Guide**](LIBRARY_INTEGRATION.md).
