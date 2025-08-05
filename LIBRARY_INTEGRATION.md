@@ -36,7 +36,7 @@ dependencies {
 2. Add to your app's `build.gradle.kts`:
 ```kotlin
 dependencies {
-    implementation("com.example.bingo:bingo-sdk-android:1.0.0")
+    implementation("com.example.bingo:bingo-sdk-android:1.0.2")
 }
 ```
 
@@ -58,9 +58,6 @@ dependencies {
 ### Android Usage
 
 ```kotlin
-import com.example.bingo.BingoSDK
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     
