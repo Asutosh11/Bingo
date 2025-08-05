@@ -1,0 +1,13 @@
+# JitPack configuration
+jdk:
+  - openjdk17
+
+env:
+  - GRADLE_OPTS="-Xmx2048m -Dfile.encoding=UTF-8"
+
+before_install:
+  - echo "Setting up Java environment for JitPack"
+  - java -version
+
+install:
+  - ./gradlew clean :shared:build :shared:publishToMavenLocal -x test --no-daemon --stacktrace
