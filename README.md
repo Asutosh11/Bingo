@@ -11,6 +11,7 @@ A **Kotlin Multiplatform** project demonstrating API integration using **Ktor Cl
 ### 1. Helper Function
 
 - **validateAddress(address: Map<String, String>): ValidationResult**:
+  
   Validates an address map and returns a list of if errors exist else blank
 
 ### 2. API
