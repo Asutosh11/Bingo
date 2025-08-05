@@ -18,8 +18,8 @@ A **Kotlin Multiplatform** project demonstrating API integration using **Ktor Cl
 
 - **addHomeAddress(address: Map<String, String>)**:
 
-**Base URL**: `https://composekmp.free.beeceptor.com`  
-**Endpoint**: `POST /addaddress`
+  **Base URL**: `https://composekmp.free.beeceptor.com`  
+  **Endpoint**: `POST /addaddress`
 
 ### API Output
 
