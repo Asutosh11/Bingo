@@ -1,6 +1,6 @@
 # Bingo SDK
 
-A **Kotlin Multiplatform** library for address management and validation with API integration support for Android, iOS, and JVM platforms.
+A **Kotlin Multiplatform** library for adding address and validation with API integration support for Android and iOS.
 
 **Latest Version: 1.0.2**
 
@@ -12,8 +12,6 @@ For detailed integration instructions and usage examples, see the [**Library Int
 
 - **Cross-Platform**: Built with Kotlin Multiplatform (KMP) for Android and iOS
 - **Networking**: Uses Ktor Client for HTTP requests with detailed logging
-- **Address Validation**: Built-in validation for address data
-- **Dual API Support**: Flow-based for Android, Callback-based for iOS
 
 ## Quick Start
 
@@ -36,15 +34,15 @@ BingoSDK.shared.addHomeAddress(
 )
 ```
 
-## API Functionalities
+## Functionalities Exposed
 
-### 1. Address Validation
+### 1. Address Validation Helper
 
 - **validateAddress(address: Map<String, String>): ValidationResult**:
   
   Validates an address map and returns a list of errors if exists else blank
 
-### 2. Address Management API
+### 2. Add Address API
 
 - **addHomeAddress(address: Map<String, String>)**: Flow-based for Android
 - **addHomeAddress(address, onLoading, onSuccess, onError)**: Callback-based for iOS
@@ -52,7 +50,7 @@ BingoSDK.shared.addHomeAddress(
   **Base URL**: `https://composekmp.free.beeceptor.com`  
   **Endpoint**: `POST /addaddress`
 
-## Sample API Output
+### Sample API Output
 
 ```
 Testing Home Address API...
@@ -66,16 +64,3 @@ Response:
 All API tests completed successfully!
 Resources cleaned up
 ```
-
-## Build Commands
-
-- `./gradlew :shared:build` - Build all targets
-- `./gradlew :shared:assembleRelease` - Build Android AAR
-- `./gradlew :shared:exportIOSFramework` - Generate iOS frameworks
-- `./gradlew publishToMavenLocal` - Publish to local Maven
-
-## Documentation
-
-- [Library Integration Guide](LIBRARY_INTEGRATION.md) - Complete integration instructions
-- [API Reference](LIBRARY_INTEGRATION.md#api-reference) - Detailed API documentation
-- [Troubleshooting](LIBRARY_INTEGRATION.md#troubleshooting) - Common issues and solutions
