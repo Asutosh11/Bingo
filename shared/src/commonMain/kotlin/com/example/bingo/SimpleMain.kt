@@ -9,24 +9,16 @@ import kotlinx.coroutines.runBlocking
  */
 fun main() = runBlocking {
     println("🚀 Running Address API Example...")
-    
     val example = AddressApiExample()
-    
+
     try {
         println("\n📍 Testing Home Address API...")
         example.addHomeAddressExample()
-        
+
         println("\n🏢 Testing Work Address API...")
         example.addWorkAddressExample()
-        
-        println("\n🔧 Testing Custom Address API...")
-        example.addCustomAddressExample()
-        
-        println("\n📄 Testing JSON Address API...")
-        example.addAddressFromJsonExample()
-        
+
         println("\n✅ All API tests completed successfully!")
-        
     } catch (e: Exception) {
         println("❌ Error during API testing: ${e.message}")
         e.printStackTrace()

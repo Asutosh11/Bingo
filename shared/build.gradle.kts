@@ -59,6 +59,7 @@ kotlin {
         
         jvmMain.dependencies {
             implementation("io.ktor:ktor-client-cio:2.3.12")
+            implementation(libs.slf4j.simple)
         }
         
         iosMain.dependencies {
