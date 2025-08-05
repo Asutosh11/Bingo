@@ -4,14 +4,15 @@ A **Kotlin Multiplatform** library for adding address and validation with API in
 
 **Latest Version: 1.0.2**
 
-## 📚 Library Integration
-
-For detailed integration instructions and usage examples, see the [**Library Integration Guide**](LIBRARY_INTEGRATION.md).
-
 ## Features
 
 - **Cross-Platform**: Built with Kotlin Multiplatform (KMP) for Android and iOS
 - **Networking**: Uses Ktor Client for HTTP requests with detailed logging
+
+
+## 📚 Library Integration
+
+For detailed integration instructions and usage examples, see the [**Library Integration Guide**](LIBRARY_INTEGRATION.md).
 
 ## Quick Start
 
