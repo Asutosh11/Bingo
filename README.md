@@ -12,11 +12,11 @@ A **Kotlin Multiplatform** project demonstrating API integration using **Ktor Cl
 
 - **validateAddress(address: Map<String, String>): ValidationResult**:
   
-  Validates an address map and returns a list of if errors exist else blank
+  Validates an address map and returns a list of errors if exists else blank
 
 ### 2. API
 
-The project integrates with a REST API endpoint:
+- **addHomeAddress(address: Map<String, String>)**:
 **Base URL**: `https://composekmp.free.beeceptor.com`  
 **Endpoint**: `POST /addaddress`
 

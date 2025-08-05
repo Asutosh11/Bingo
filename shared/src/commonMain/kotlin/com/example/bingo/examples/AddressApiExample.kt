@@ -10,19 +10,11 @@ import com.example.bingo.domain.AddressManager
 class AddressApiExample {
     
     private val addressManager = AddressManager()
-    private val address = mapOf<String, String>(
-        "type" to "home",
-        "street" to "123 Main Street",
-        "city" to "New York",
-        "state" to "NY",
-        "zipCode" to "10001",
-        "country" to "USA"
-    )
 
     /**
      * Example 1: Add a complete home address
      */
-    suspend fun addHomeAddressExample() {
+    suspend fun addHomeAddress(address: Map<String, String>) {
         addressManager.addHomeAddress(
             address
         ).collect { result ->

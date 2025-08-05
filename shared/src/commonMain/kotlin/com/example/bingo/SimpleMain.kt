@@ -13,7 +13,15 @@ fun main() = runBlocking {
 
     try {
         println("\n📍 Testing Home Address API...")
-        example.addHomeAddressExample()
+        val address = mapOf<String, String>(
+            "type" to "home",
+            "street" to "123 Main Street",
+            "city" to "New York",
+            "state" to "NY",
+            "zipCode" to "10001",
+            "country" to "USA"
+        )
+        example.addHomeAddress(address)
 
         println("\n✅ All API tests completed successfully!")
     } catch (e: Exception) {
