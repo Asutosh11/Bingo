@@ -3,7 +3,7 @@ jdk:
   - openjdk17
 
 env:
-  - GRADLE_OPTS="-Xmx2048m -Dfile.encoding=UTF-8"
+  GRADLE_OPTS: "-Xmx2048m -Dfile.encoding=UTF-8"
 
 before_install:
   - echo "Setting up Java environment for JitPack"
