@@ -28,7 +28,7 @@ class AddressApiExample {
         ).collect { result ->
             when (result) {
                 is ApiResult.Loading -> {
-                    println("Request: $address")
+                    println("Payload: $address")
                 }
                 is ApiResult.Success -> {
                     println("Response: ${result.data.status}")
