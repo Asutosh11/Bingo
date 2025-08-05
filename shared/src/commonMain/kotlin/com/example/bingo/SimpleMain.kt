@@ -15,9 +15,6 @@ fun main() = runBlocking {
         println("\n📍 Testing Home Address API...")
         example.addHomeAddressExample()
 
-        println("\n🏢 Testing Work Address API...")
-        example.addWorkAddressExample()
-
         println("\n✅ All API tests completed successfully!")
     } catch (e: Exception) {
         println("❌ Error during API testing: ${e.message}")
