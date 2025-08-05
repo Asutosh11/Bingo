@@ -16,7 +16,8 @@ A **Kotlin Multiplatform** project demonstrating API integration using **Ktor Cl
 
 ### 2. API
 
-- **addHomeAddress(address: Map<String, String>)**:
+- **addHomeAddress(address: Map<String, String>)**: Flow-based for Android
+- **addHomeAddress(address, onLoading, onSuccess, onError)**: Callback-based for iOS
 
   **Base URL**: `https://composekmp.free.beeceptor.com`  
   **Endpoint**: `POST /addaddress`
@@ -34,4 +35,3 @@ Response:
 
 All API tests completed successfully!
 Resources cleaned up
-```
