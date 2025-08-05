@@ -1,4 +1,4 @@
-# Bingo
+## Bingo
 
 A **Kotlin Multiplatform** project demonstrating API integration using **Ktor Client**
 ## Features
@@ -6,32 +6,19 @@ A **Kotlin Multiplatform** project demonstrating API integration using **Ktor Cl
 - **Cross-Platform**: Built with Kotlin Multiplatform (KMP) for Android and iOS
 - **Networking**: Uses Ktor Client for HTTP requests with detailed logging
 
-## Project Structure Details
+## Functionalities Exposed
 
-### Network Layer
-- `HttpClientFactory`: Configures Ktor client with content negotiation and logging
-- `AddressApiService`: Handles API requests with comprehensive logging
-- `ApiConfig`: Centralized API configuration
+### 1. Helper Function
 
-### Data Layer
-- `AddressModels`: Data classes for API requests and responses
-- `AddressRepository`: Repository pattern implementation
-- `ApiResult`: Sealed class for handling API response states
+- **validateAddress(address: Map<String, String>): ValidationResult**: Validates an address map and returns a ValidationResult 
 
-### Domain Layer
-- `AddressManager`: Business logic layer with simplified API interface
-
-### Examples
-- `SimpleMain`: Entry point demonstrating API usage
-- `AddressApiExample`: Comprehensive example of address API operations
-
-## API Used
+### 2. API
 
 The project integrates with a REST API endpoint:
 **Base URL**: `https://composekmp.free.beeceptor.com`  
 **Endpoint**: `POST /addaddress`
 
-## Application Output
+### API Output
 
 ```
 Testing Home Address API...
