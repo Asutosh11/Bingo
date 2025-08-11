@@ -1,5 +1,7 @@
 # Bingo SDK
 
+[![JitPack](https://jitpack.io/v/Asutosh11/Bingo.svg)](https://jitpack.io/#Asutosh11/Bingo)
+
 A **Kotlin Multiplatform** library for validating and adding addresses.
 
 ## Features
