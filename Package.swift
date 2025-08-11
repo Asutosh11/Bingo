@@ -15,7 +15,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "BingoSDK",
-            url: "https://github.com/Asutosh11/Bingo/releases/download/v1.0.0/BingoSDK.xcframework.zip",
+            url: "https://github.com/Asutosh11/Bingo/releases/download/v1.0.2/BingoSDK.xcframework.zip",
             checksum: "your-checksum-here"
         )
     ]

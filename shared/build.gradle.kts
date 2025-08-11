@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "com.example.bingo"
-version = "1.0.0"
+version = "1.0.2"
 
 java {
     toolchain {
@@ -117,7 +117,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.example.bingo"
             artifactId = "bingo-sdk"
-            version = "1.0.0"
+            version = "1.0.2"
             
             pom {
                 name.set("Bingo SDK")
