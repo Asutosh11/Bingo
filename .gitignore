@@ -9,6 +9,10 @@ captures
 local.properties
 xcuserdata
 
+# XCFramework build artifacts (too large for Git)
+BingoSDK.xcframework/
+BingoSDK.xcframework.zip
+
 # Kotlin compiler sessions and temporary files
 .kotlin/
 *.tmp
