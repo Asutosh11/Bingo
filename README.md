@@ -42,9 +42,7 @@ For detailed integration instructions and usage examples, see the [**Library Int
 
 ## 📱 Demo: Library Integration in iOS
 
-Here's a visual demonstration of the Bingo SDK integrated into an iOS application:
-
-### iOS Simulator Screenshots
+### iOS App Screenshots
 
 <table>
   <tr>
@@ -57,5 +55,23 @@ Here's a visual demonstration of the Bingo SDK integrated into an iOS applicatio
   </tr>
   <tr>
     <td colspan="2" align="center"><img src="screenshots/api-log.png" width="400"/></td>
+  </tr>
+</table>
+
+## 📱 Demo: Library Integration in Android
+
+### Android App Screenshots
+
+<table>
+  <tr>
+    <td><img src="screenshots/android/Screenshot%202025-08-14%20at%2012.02.54%20AM.png" width="200"/></td>
+    <td><img src="screenshots/android/Screenshot%202025-08-14%20at%2012.05.39%20AM.png" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/android/Screenshot%202025-08-14%20at%2012.06.25%20AM.png" width="200"/></td>
+    <td><img src="screenshots/android/Screenshot%202025-08-14%20at%2012.08.16%20AM.png" width="200"/></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><img src="screenshots/android/Screenshot%202025-08-14%20at%2012.09.03%20AM.png" width="200"/></td>
   </tr>
 </table>
