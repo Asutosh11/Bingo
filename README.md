@@ -56,6 +56,6 @@ Here's a visual demonstration of the Bingo SDK integrated into an iOS applicatio
     <td><img src="screenshots/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-13%20at%2018.58.54.png" width="200"/></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><img src="screenshots/Screenshot%202025-08-13%20at%207.03.24%20PM.png" width="400"/></td>
+    <td colspan="2" align="center"><img src="screenshots/api-log.png" width="400"/></td>
   </tr>
 </table>
