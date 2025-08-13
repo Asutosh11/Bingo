@@ -39,3 +39,22 @@ A **Kotlin Multiplatform** library for validating and adding addresses.
 ## 📚 Library Integration
 
 For detailed integration instructions and usage examples, see the [**Library Integration Guide**](LIBRARY_INTEGRATION.md).
+
+## 📱 Demo: Library Integration in iOS
+
+Here's a visual demonstration of the Bingo SDK integrated into an iOS application:
+
+### iOS Simulator Screenshots
+
+<table>
+  <tr>
+    <td><img src="screenshots/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-13%20at%2018.57.30.png" width="200"/></td>
+    <td><img src="screenshots/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-13%20at%2018.58.44.png" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-13%20at%2018.58.49.png" width="200"/></td>
+    <td><img src="screenshots/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-08-13%20at%2018.58.54.png" width="200"/></td>
+  </tr>
+</table>
+
+![Integration Overview](screenshots/Screenshot%202025-08-13%20at%207.03.24%20PM.png)
