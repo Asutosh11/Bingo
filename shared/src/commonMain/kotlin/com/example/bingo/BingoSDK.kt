@@ -16,7 +16,7 @@ object BingoSDK {
     /**
      * Get the current SDK version
      */
-    const val VERSION = "1.0.0"
+    const val VERSION = "1.0.6"
     
     /**
      * Validate address data before submission

@@ -4,11 +4,13 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.composeMultiplatform)
+    alias(libs.plugins.kotlinCompose)
     `maven-publish`
 }
 
-group = "com.example.bingo"
-version = "1.0.5"
+group = "com.github.Asutosh11"
+version = "1.0.6"
 
 java {
     toolchain {
@@ -67,10 +69,20 @@ kotlin {
             
             // Export coroutines for iOS
             api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+
+            // Compose Multiplatform
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.material3)
+            implementation(compose.ui)
         }
         
         androidMain.dependencies {
             implementation(libs.ktor.client.android)
+            implementation(libs.androidx.lifecycle.runtime)
+            implementation(libs.androidx.activity.compose)
+            implementation("androidx.core:core-ktx:1.13.1")
+            implementation(compose.uiTooling)
         }
         
         jvmMain.dependencies {
@@ -114,15 +126,15 @@ android {
 // Configure publishing
 publishing {
     publications {
-        create<MavenPublication>("maven") {
-            groupId = "com.example.bingo"
+        withType<MavenPublication> {
+            groupId = "com.github.Asutosh11"
             artifactId = "bingo-sdk"
-            version = "1.0.5"
+            version = "1.0.6"
             
             pom {
                 name.set("Bingo SDK")
                 description.set("Kotlin Multiplatform library for address management with API integration")
-                url.set("https://github.com/yourusername/bingo")
+                url.set("https://github.com/Asutosh11/Bingo")
                 
                 licenses {
                     license {
@@ -133,10 +145,16 @@ publishing {
                 
                 developers {
                     developer {
-                        id.set("developer")
-                        name.set("Developer Name")
-                        email.set("developer@example.com")
+                        id.set("Asutosh11")
+                        name.set("Asutosh Panda")
+                        email.set("panda.asutosh04@gmail.com")
                     }
+                }
+                
+                scm {
+                    connection.set("scm:git:git://github.com/Asutosh11/Bingo.git")
+                    developerConnection.set("scm:git:ssh://github.com/Asutosh11/Bingo.git")
+                    url.set("https://github.com/Asutosh11/Bingo")
                 }
             }
         }

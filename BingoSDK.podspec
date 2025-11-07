@@ -1,9 +1,9 @@
 Pod::Spec.new do |spec|
   spec.name          = 'BingoSDK'
-  spec.version       = '1.0.0'
+  spec.version       = '1.0.6'
   spec.homepage      = 'https://github.com/Asutosh11/Bingo'
   spec.source        = { :git => 'https://github.com/Asutosh11/Bingo.git', :tag => "#{spec.version}" }
-  spec.authors       = { 'Your Name' => 'panda.asutosh04@gmail.com' }
+  spec.authors       = { 'Asutosh Panda' => 'panda.asutosh04@gmail.com' }
   spec.license       = { :type => 'MIT', :file => 'LICENSE' }
   spec.summary       = 'Kotlin Multiplatform library for address management with API integration'
   spec.description   = 'BingoSDK provides address management functionality with API integration for iOS and Android applications.'
