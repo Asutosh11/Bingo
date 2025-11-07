@@ -1,9 +1,9 @@
 [versions]
-agp = "8.12.1"
-kotlin = "2.1.21"
+agp = "8.7.3"
+kotlin = "2.2.0"
 ktor = "2.3.12"
 slf4j = "2.0.9"
-compose = "1.9.2"
+compose = "1.8.2"
 lifecycle = "2.9.1"
 activity = "1.10.1"
 core = "1.16.0"
