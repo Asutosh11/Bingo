@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
+import com.example.bingo.ui.BingoScreen
 
 /**
  * Android Activity for displaying the Bingo SDK UI
@@ -19,7 +20,7 @@ class BingoActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
-                BingoSDK.ComposeUI()
+                BingoScreen()
             }
         }
     }

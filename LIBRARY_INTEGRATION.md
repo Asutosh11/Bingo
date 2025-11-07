@@ -36,11 +36,11 @@ startActivity(intent)
 Use the Compose UI in your own screen:
 
 ```kotlin
-import com.example.bingo.BingoSDK
+import com.example.bingo.ui.BingoScreen
 
 @Composable
 fun MyScreen() {
-    BingoSDK.ComposeUI()
+    BingoScreen()
 }
 ```
 

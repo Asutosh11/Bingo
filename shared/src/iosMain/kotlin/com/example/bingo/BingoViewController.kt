@@ -1,6 +1,7 @@
 package com.example.bingo
 
 import androidx.compose.ui.window.ComposeUIViewController
+import com.example.bingo.ui.BingoScreen
 
 /**
  * iOS ViewController for displaying the Bingo SDK UI
@@ -14,5 +15,5 @@ import androidx.compose.ui.window.ComposeUIViewController
  * ```
  */
 fun createBingoViewController() = ComposeUIViewController {
-    BingoSDK.ComposeUI()
+    BingoScreen()
 }
