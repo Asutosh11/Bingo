@@ -81,7 +81,7 @@ kotlin {
             implementation(libs.ktor.client.android)
             implementation(libs.androidx.lifecycle.runtime)
             implementation(libs.androidx.activity.compose)
-            implementation("androidx.core:core-ktx:1.13.1")
+            implementation(libs.androidx.core.ktx)
             implementation(compose.uiTooling)
         }
         
@@ -105,6 +105,7 @@ android {
     compileSdk = 35
     defaultConfig {
         minSdk = 24
+        targetSdk = 35
         
         // Library configuration
         consumerProguardFiles("consumer-rules.pro")
