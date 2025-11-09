@@ -83,6 +83,7 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(libs.androidx.core.ktx)
             implementation(compose.uiTooling)
+            implementation(libs.firebase.crashlytics.android)
         }
         
         jvmMain.dependencies {
@@ -92,6 +93,7 @@ kotlin {
         
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
+            implementation(libs.firebase.crashlytics.ios)
         }
         
         commonTest.dependencies {
