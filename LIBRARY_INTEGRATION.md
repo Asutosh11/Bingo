@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.Asutosh11:Bingo:1.0.5")
+    implementation("com.github.Asutosh11:Bingo:1.0.7")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("io.ktor:ktor-client-android:2.3.12")
 }
@@ -52,7 +52,7 @@ Add to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/Asutosh11/Bingo.git", from: "1.0.5")
+    .package(url: "https://github.com/Asutosh11/Bingo.git", from: "1.0.7")
 ]
 ```
 
@@ -61,12 +61,12 @@ dependencies: [
 Add to your `Podfile`:
 
 ```ruby
-pod 'BingoSDK', :git => 'https://github.com/Asutosh11/Bingo.git', :tag => '1.0.5'
+pod 'BingoSDK', :git => 'https://github.com/Asutosh11/Bingo.git', :tag => '1.0.7'
 ```
 
 ### Option 3: Manual Framework
 
-1. Download the latest release from: `https://github.com/Asutosh11/Bingo/releases/tag/1.0.5`
+1. Download the latest release from: `https://github.com/Asutosh11/Bingo/releases/tag/1.0.7`
 2. Add `BingoSDK.xcframework` to your Xcode project
 3. In Xcode, go to your target's "Build Phases" → "Link Binary With Libraries" and add `BingoSDK.xcframework`
 
