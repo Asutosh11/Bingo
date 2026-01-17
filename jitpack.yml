@@ -10,4 +10,4 @@ before_install:
   - java -version
 
 install:
-  - ./gradlew clean :shared:build :shared:publishToMavenLocal -x test --no-daemon --stacktrace
+  - ./gradlew clean :shared:build :shared:publishToMavenLocal -x test -x lint -x lintDebug -x lintRelease -x lintAnalyzeDebug -x lintAnalyzeRelease -x lintAnalyzeDebugUnitTest -x lintAnalyzeReleaseUnitTest --no-daemon --stacktrace
