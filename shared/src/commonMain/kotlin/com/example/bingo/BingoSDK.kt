@@ -3,6 +3,7 @@ package com.example.bingo
 import com.example.bingo.domain.AddressManager
 import com.example.bingo.data.models.AddAddressResponse
 import com.example.bingo.data.models.ApiResult
+import com.example.bingo.analytics.AnalyticsAdapter
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -14,9 +15,28 @@ object BingoSDK {
     private val addressManager = AddressManager()
     
     /**
+     * Analytics adapter instance (optional)
+     * Set via initialize() method
+     */
+    internal var analyticsAdapter: AnalyticsAdapter? = null
+        private set
+    
+    /**
      * Get the current SDK version
      */
     const val VERSION = "1.0.6"
+
+    fun initialize(adapter: AnalyticsAdapter) {
+        analyticsAdapter = adapter
+        trackEvent("bingo_sdk_initialized", mapOf("version" to VERSION))
+    }
+    
+    /**
+     * Track an analytics event (internal helper)
+     */
+    internal fun trackEvent(name: String, params: Map<String, Any> = emptyMap()) {
+        analyticsAdapter?.trackEvent(name, params)
+    }
     
     /**
      * Validate address data before submission

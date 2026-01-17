@@ -1,5 +1,6 @@
 package com.example.bingo.domain
 
+import com.example.bingo.BingoSDK
 import com.example.bingo.data.models.AddAddressResponse
 import com.example.bingo.data.models.ApiResult
 import com.example.bingo.repository.AddressRepository
@@ -31,6 +32,18 @@ class AddressManager {
             }
         }
         
+        // Track validation event
+        if (errors.isEmpty()) {
+            BingoSDK.trackEvent("address_validation_success", mapOf(
+                "field_count" to address.size
+            ))
+        } else {
+            BingoSDK.trackEvent("address_validation_failed", mapOf(
+                "error_count" to errors.size,
+                "errors" to errors.joinToString(", ")
+            ))
+        }
+        
         return errors
     }
 
@@ -59,9 +72,26 @@ class AddressManager {
         scope.launch {
             addHomeAddress(address).collect { result ->
                 when (result) {
-                    is ApiResult.Loading -> onLoading()
-                    is ApiResult.Success -> onSuccess(result.data)
-                    is ApiResult.Error -> onError(result.message)
+                    is ApiResult.Loading -> {
+                        BingoSDK.trackEvent("address_submission_started", mapOf(
+                            "address_type" to (address["type"] ?: "unknown")
+                        ))
+                        onLoading()
+                    }
+                    is ApiResult.Success -> {
+                        BingoSDK.trackEvent("address_submission_success", mapOf(
+                            "address_type" to (address["type"] ?: "unknown"),
+                            "response_message" to (result.data)
+                        ))
+                        onSuccess(result.data)
+                    }
+                    is ApiResult.Error -> {
+                        BingoSDK.trackEvent("address_submission_failed", mapOf(
+                            "address_type" to (address["type"] ?: "unknown"),
+                            "error_message" to result.message
+                        ))
+                        onError(result.message)
+                    }
                 }
             }
         }

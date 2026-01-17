@@ -6,6 +6,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.bingo.BingoSDK
 
 /**
  * Common Compose UI screen for Bingo SDK
@@ -13,6 +14,13 @@ import androidx.compose.ui.unit.dp
  */
 @Composable
 fun BingoScreen() {
+    // Track screen view on first composition
+    LaunchedEffect(Unit) {
+        BingoSDK.trackEvent("bingo_screen_viewed", mapOf(
+            "sdk_version" to BingoSDK.VERSION
+        ))
+    }
+    
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
@@ -33,7 +41,7 @@ fun BingoScreen() {
             Spacer(modifier = Modifier.height(16.dp))
             
             Text(
-                text = "Version ${com.example.bingo.BingoSDK.VERSION}",
+                text = "Version ${BingoSDK.VERSION}",
                 style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onBackground
             )
@@ -41,7 +49,10 @@ fun BingoScreen() {
             Spacer(modifier = Modifier.height(32.dp))
             
             Button(
-                onClick = { /* Add your action here */ },
+                onClick = { 
+                    BingoSDK.trackEvent("get_started_clicked", emptyMap())
+                    // Add your action here
+                },
                 modifier = Modifier.fillMaxWidth(0.6f)
             ) {
                 Text("Get Started")

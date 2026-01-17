@@ -8,8 +8,6 @@ lifecycle = "2.9.1"
 activity = "1.10.1"
 core = "1.16.0"
 appcompat = "1.7.1"
-crashlytics-android = "18.6.0"
-crashlytics-ios = "1.10.0"
 
 
 [libraries]
@@ -38,11 +36,6 @@ androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-an
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
-
-# Crashlytics
-firebase-crashlytics-android = { module = "com.google.firebase:firebase-crashlytics", version.ref = "crashlytics-android" }
-firebase-crashlytics-ios = { module = "dev.gitlive:firebase-crashlytics", version.ref = "crashlytics-ios" }
-
 
 [plugins]
 androidLibrary = { id = "com.android.library", version.ref = "agp" }

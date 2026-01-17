@@ -122,6 +122,12 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
+    // Disable lint to avoid Kotlin 2.2.0 compatibility issues on JitPack
+    lint {
+        abortOnError = false
+        checkReleaseBuilds = false
+    }
+
     // Enable library publishing
     publishing {
         singleVariant("release") {
