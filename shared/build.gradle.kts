@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "com.github.Asutosh11"
-version = "1.0.11"
+version = "1.0.12"
 
 java {
     toolchain {
@@ -200,7 +200,7 @@ publishing {
         withType<MavenPublication> {
             groupId = "com.github.Asutosh11"
             artifactId = "bingo-sdk"
-            version = "1.0.11"
+            version = "1.0.12"
 
             pom {
                 name.set("Bingo SDK")
