@@ -3,6 +3,9 @@ package com.example.bingo.ui
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -113,6 +116,7 @@ private fun AddressUIHeader() {
         modifier = Modifier
             .fillMaxWidth()
             .background(AddressUIColors.PrimaryBlue)
+            .windowInsetsPadding(WindowInsets.statusBars)
             .padding(vertical = 20.dp, horizontal = 24.dp),
         contentAlignment = Alignment.CenterStart
     ) {
@@ -372,6 +376,7 @@ private fun AddressUIHeaderWithBack(
         modifier = Modifier
             .fillMaxWidth()
             .background(AddressUIColors.PrimaryBlue)
+            .windowInsetsPadding(WindowInsets.statusBars)
             .padding(vertical = 16.dp, horizontal = 16.dp)
     ) {
         if (showBack) {
