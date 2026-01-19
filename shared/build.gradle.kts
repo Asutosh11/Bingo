@@ -59,10 +59,19 @@ kotlin {
             // Export main library classes
             export("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-            // Configure framework for library usage
+            // Configure framework for library usage with size optimizations
             freeCompilerArgs += listOf(
-                "-Xexport-kdoc"
+                "-Xexport-kdoc",
+                "-Xadd-light-debug=disable",  // Disable debug info for smaller size
+                "-opt-in=kotlin.experimental.ExperimentalObjCName"
             )
+        }
+
+        // Size optimizations for release binaries
+        iosTarget.binaries.all {
+            if (this is org.jetbrains.kotlin.gradle.plugin.mpp.Framework) {
+                linkerOpts("-dead_strip")  // Strip unused code
+            }
         }
     }
 
