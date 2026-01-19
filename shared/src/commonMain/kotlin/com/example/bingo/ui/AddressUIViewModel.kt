@@ -11,14 +11,14 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 /**
- * UI State for Lowe's Address Screen
+ * UI State for Address Screen
  */
-data class LowesUiState(
+data class AddressUIState(
     val isLoading: Boolean = false,
     val addresses: List<SavedAddress> = emptyList(),
     val error: String? = null,
     val successMessage: String? = null,
-    val currentScreen: LowesScreen = LowesScreen.Home
+    val currentScreen: AddressUIScreen = AddressUIScreen.Home
 )
 
 /**
@@ -36,28 +36,28 @@ data class SavedAddress(
 /**
  * Screen navigation states
  */
-enum class LowesScreen {
+enum class AddressUIScreen {
     Home,
     AddAddress,
     AddressList
 }
 
 /**
- * ViewModel for Lowe's Address Management
+ * ViewModel for Address Management
  */
-class LowesAddressViewModel {
+class AddressUIViewModel {
     
     private val repository = AddressRepository()
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
     
-    private val _uiState = MutableStateFlow(LowesUiState())
-    val uiState: StateFlow<LowesUiState> = _uiState.asStateFlow()
+    private val _uiState = MutableStateFlow(AddressUIState())
+    val uiState: StateFlow<AddressUIState> = _uiState.asStateFlow()
     
     // In-memory address storage (would be persisted in real app)
     private val savedAddresses = mutableListOf<SavedAddress>()
     private var addressIdCounter = 0
     
-    fun navigateTo(screen: LowesScreen) {
+    fun navigateTo(screen: AddressUIScreen) {
         _uiState.value = _uiState.value.copy(
             currentScreen = screen,
             error = null,
@@ -112,7 +112,7 @@ class LowesAddressViewModel {
                             isLoading = false,
                             addresses = savedAddresses.toList(),
                             successMessage = "Address added successfully!",
-                            currentScreen = LowesScreen.AddressList
+                            currentScreen = AddressUIScreen.AddressList
                         )
                     }
                     is ApiResult.Error -> {

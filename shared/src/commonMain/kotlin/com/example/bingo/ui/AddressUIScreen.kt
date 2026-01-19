@@ -18,30 +18,30 @@ import androidx.compose.ui.unit.sp
 import com.example.bingo.BingoSDK
 
 /**
- * Lowe's themed address management screen
- * Minimal design with Lowe's blue color scheme
+ * Address management screen
+ * Minimal design with blue color scheme
  */
 @Composable
-fun LowesAddressScreen(
+fun AddressUIAddressScreen(
     onAddAddress: () -> Unit = {},
     onViewAddresses: () -> Unit = {}
 ) {
     LaunchedEffect(Unit) {
-        BingoSDK.trackEvent("lowes_screen_viewed", mapOf(
+        BingoSDK.trackEvent("address_screen_viewed", mapOf(
             "sdk_version" to BingoSDK.VERSION
         ))
     }
 
-    LowesTheme {
+    AddressUITheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = LowesColors.White
+            color = AddressUIColors.White
         ) {
             Column(
                 modifier = Modifier.fillMaxSize()
             ) {
                 // Header
-                LowesHeader()
+                AddressUIHeader()
 
                 // Content
                 Column(
@@ -57,34 +57,34 @@ fun LowesAddressScreen(
                         text = "Manage Your Addresses",
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
-                        color = LowesColors.TextPrimary,
+                        color = AddressUIColors.TextPrimary,
                         textAlign = TextAlign.Center
                     )
 
                     Text(
                         text = "Save your delivery addresses for faster checkout",
                         fontSize = 14.sp,
-                        color = LowesColors.TextSecondary,
+                        color = AddressUIColors.TextSecondary,
                         textAlign = TextAlign.Center
                     )
 
                     Spacer(modifier = Modifier.height(32.dp))
 
                     // Add Address Button
-                    LowesButton(
+                    AddressUIButton(
                         text = "Add New Address",
                         onClick = {
-                            BingoSDK.trackEvent("lowes_add_address_clicked", emptyMap())
+                            BingoSDK.trackEvent("add_address_clicked", emptyMap())
                             onAddAddress()
                         },
                         modifier = Modifier.fillMaxWidth()
                     )
 
                     // View Addresses Button
-                    LowesOutlinedButton(
+                    AddressUIOutlinedButton(
                         text = "View Saved Addresses",
                         onClick = {
-                            BingoSDK.trackEvent("lowes_view_addresses_clicked", emptyMap())
+                            BingoSDK.trackEvent("view_addresses_clicked", emptyMap())
                             onViewAddresses()
                         },
                         modifier = Modifier.fillMaxWidth()
@@ -96,7 +96,7 @@ fun LowesAddressScreen(
                     Text(
                         text = "Powered by Bingo SDK v${BingoSDK.VERSION}",
                         fontSize = 12.sp,
-                        color = LowesColors.TextSecondary
+                        color = AddressUIColors.TextSecondary
                     )
                 }
             }
@@ -105,31 +105,31 @@ fun LowesAddressScreen(
 }
 
 /**
- * Lowe's branded header
+ * Address UI branded header
  */
 @Composable
-private fun LowesHeader() {
+private fun AddressUIHeader() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(LowesColors.LowesBlue)
+            .background(AddressUIColors.PrimaryBlue)
             .padding(vertical = 20.dp, horizontal = 24.dp),
         contentAlignment = Alignment.CenterStart
     ) {
         Text(
-            text = "Lowe's",
+            text = "Address",
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold,
-            color = LowesColors.White
+            color = AddressUIColors.White
         )
     }
 }
 
 /**
- * Lowe's styled primary button
+ * Address UI styled primary button
  */
 @Composable
-fun LowesButton(
+fun AddressUIButton(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -142,10 +142,10 @@ fun LowesButton(
             .clip(RoundedCornerShape(4.dp)),
         enabled = enabled,
         colors = ButtonDefaults.buttonColors(
-            containerColor = LowesColors.LowesBlue,
-            contentColor = LowesColors.White,
-            disabledContainerColor = LowesColors.MediumGray,
-            disabledContentColor = LowesColors.TextSecondary
+            containerColor = AddressUIColors.PrimaryBlue,
+            contentColor = AddressUIColors.White,
+            disabledContainerColor = AddressUIColors.MediumGray,
+            disabledContentColor = AddressUIColors.TextSecondary
         ),
         shape = RoundedCornerShape(4.dp)
     ) {
@@ -158,10 +158,10 @@ fun LowesButton(
 }
 
 /**
- * Lowe's styled outlined button
+ * Address UI styled outlined button
  */
 @Composable
-fun LowesOutlinedButton(
+fun AddressUIOutlinedButton(
     text: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
@@ -173,10 +173,10 @@ fun LowesOutlinedButton(
             .height(52.dp),
         enabled = enabled,
         colors = ButtonDefaults.outlinedButtonColors(
-            contentColor = LowesColors.LowesBlue,
-            disabledContentColor = LowesColors.TextSecondary
+            contentColor = AddressUIColors.PrimaryBlue,
+            disabledContentColor = AddressUIColors.TextSecondary
         ),
-        border = BorderStroke(2.dp, LowesColors.LowesBlue),
+        border = BorderStroke(2.dp, AddressUIColors.PrimaryBlue),
         shape = RoundedCornerShape(4.dp)
     ) {
         Text(
@@ -188,10 +188,10 @@ fun LowesOutlinedButton(
 }
 
 /**
- * Lowe's styled text field
+ * Address UI styled text field
  */
 @Composable
-fun LowesTextField(
+fun AddressUITextField(
     value: String,
     onValueChange: (String) -> Unit,
     label: String,
@@ -205,10 +205,10 @@ fun LowesTextField(
         modifier = modifier.fillMaxWidth(),
         enabled = enabled,
         colors = OutlinedTextFieldDefaults.colors(
-            focusedBorderColor = LowesColors.LowesBlue,
-            unfocusedBorderColor = LowesColors.MediumGray,
-            focusedLabelColor = LowesColors.LowesBlue,
-            cursorColor = LowesColors.LowesBlue
+            focusedBorderColor = AddressUIColors.PrimaryBlue,
+            unfocusedBorderColor = AddressUIColors.MediumGray,
+            focusedLabelColor = AddressUIColors.PrimaryBlue,
+            cursorColor = AddressUIColors.PrimaryBlue
         ),
         shape = RoundedCornerShape(4.dp),
         singleLine = true
@@ -216,10 +216,10 @@ fun LowesTextField(
 }
 
 /**
- * Lowe's styled card for address display
+ * Address UI styled card for address display
  */
 @Composable
-fun LowesAddressCard(
+fun AddressUIAddressCard(
     addressLine1: String,
     addressLine2: String = "",
     city: String,
@@ -233,7 +233,7 @@ fun LowesAddressCard(
     Card(
         modifier = modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
-            containerColor = LowesColors.LightGray
+            containerColor = AddressUIColors.LightGray
         ),
         shape = RoundedCornerShape(8.dp)
     ) {
@@ -245,7 +245,7 @@ fun LowesAddressCard(
                     text = "DEFAULT",
                     fontSize = 10.sp,
                     fontWeight = FontWeight.Bold,
-                    color = LowesColors.LowesBlue
+                    color = AddressUIColors.PrimaryBlue
                 )
                 Spacer(modifier = Modifier.height(4.dp))
             }
@@ -254,21 +254,21 @@ fun LowesAddressCard(
                 text = addressLine1,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Medium,
-                color = LowesColors.TextPrimary
+                color = AddressUIColors.TextPrimary
             )
 
             if (addressLine2.isNotEmpty()) {
                 Text(
                     text = addressLine2,
                     fontSize = 14.sp,
-                    color = LowesColors.TextSecondary
+                    color = AddressUIColors.TextSecondary
                 )
             }
 
             Text(
                 text = "$city, $state $zipCode",
                 fontSize = 14.sp,
-                color = LowesColors.TextSecondary
+                color = AddressUIColors.TextSecondary
             )
 
             Spacer(modifier = Modifier.height(12.dp))
@@ -279,7 +279,7 @@ fun LowesAddressCard(
                 TextButton(
                     onClick = onEdit,
                     colors = ButtonDefaults.textButtonColors(
-                        contentColor = LowesColors.LowesBlue
+                        contentColor = AddressUIColors.PrimaryBlue
                     )
                 ) {
                     Text("Edit", fontWeight = FontWeight.SemiBold)
@@ -288,7 +288,7 @@ fun LowesAddressCard(
                 TextButton(
                     onClick = onDelete,
                     colors = ButtonDefaults.textButtonColors(
-                        contentColor = LowesColors.Error
+                        contentColor = AddressUIColors.Error
                     )
                 ) {
                     Text("Delete", fontWeight = FontWeight.SemiBold)
@@ -301,11 +301,11 @@ fun LowesAddressCard(
 // ==================== MAIN APP WITH NAVIGATION ====================
 
 /**
- * Main Lowe's App with full navigation and API integration
+ * Main Address UI App with full navigation and API integration
  */
 @Composable
-fun LowesApp(
-    viewModel: LowesAddressViewModel = remember { LowesAddressViewModel() }
+fun AddressUIApp(
+    viewModel: AddressUIViewModel = remember { AddressUIViewModel() }
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
@@ -313,46 +313,46 @@ fun LowesApp(
         onDispose { viewModel.cleanup() }
     }
 
-    LowesTheme {
+    AddressUITheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = LowesColors.White
+            color = AddressUIColors.White
         ) {
             Column(modifier = Modifier.fillMaxSize()) {
-                LowesHeaderWithBack(
+                AddressUIHeaderWithBack(
                     title = when (uiState.currentScreen) {
-                        LowesScreen.Home -> "Lowe's"
-                        LowesScreen.AddAddress -> "Add Address"
-                        LowesScreen.AddressList -> "My Addresses"
+                        AddressUIScreen.Home -> "Address"
+                        AddressUIScreen.AddAddress -> "Add Address"
+                        AddressUIScreen.AddressList -> "My Addresses"
                     },
-                    showBack = uiState.currentScreen != LowesScreen.Home,
-                    onBack = { viewModel.navigateTo(LowesScreen.Home) }
+                    showBack = uiState.currentScreen != AddressUIScreen.Home,
+                    onBack = { viewModel.navigateTo(AddressUIScreen.Home) }
                 )
 
                 // Show messages
                 uiState.error?.let { error ->
-                    LowesErrorBanner(error) { viewModel.clearMessages() }
+                    AddressUIErrorBanner(error) { viewModel.clearMessages() }
                 }
                 uiState.successMessage?.let { message ->
-                    LowesSuccessBanner(message) { viewModel.clearMessages() }
+                    AddressUISuccessBanner(message) { viewModel.clearMessages() }
                 }
 
                 // Screen content
                 when (uiState.currentScreen) {
-                    LowesScreen.Home -> LowesHomeContent(
-                        onAddAddress = { viewModel.navigateTo(LowesScreen.AddAddress) },
-                        onViewAddresses = { viewModel.navigateTo(LowesScreen.AddressList) }
+                    AddressUIScreen.Home -> AddressUIHomeContent(
+                        onAddAddress = { viewModel.navigateTo(AddressUIScreen.AddAddress) },
+                        onViewAddresses = { viewModel.navigateTo(AddressUIScreen.AddressList) }
                     )
-                    LowesScreen.AddAddress -> LowesAddAddressForm(
+                    AddressUIScreen.AddAddress -> AddressUIAddAddressForm(
                         isLoading = uiState.isLoading,
                         onSubmit = { street, city, state, zip, isDefault ->
                             viewModel.addAddress(street, city, state, zip, isDefault)
                         },
-                        onCancel = { viewModel.navigateTo(LowesScreen.Home) }
+                        onCancel = { viewModel.navigateTo(AddressUIScreen.Home) }
                     )
-                    LowesScreen.AddressList -> LowesAddressListContent(
+                    AddressUIScreen.AddressList -> AddressUIAddressListContent(
                         addresses = uiState.addresses,
-                        onAddNew = { viewModel.navigateTo(LowesScreen.AddAddress) },
+                        onAddNew = { viewModel.navigateTo(AddressUIScreen.AddAddress) },
                         onDelete = { viewModel.deleteAddress(it) },
                         onSetDefault = { viewModel.setDefaultAddress(it) }
                     )
@@ -363,7 +363,7 @@ fun LowesApp(
 }
 
 @Composable
-private fun LowesHeaderWithBack(
+private fun AddressUIHeaderWithBack(
     title: String,
     showBack: Boolean,
     onBack: () -> Unit
@@ -371,14 +371,14 @@ private fun LowesHeaderWithBack(
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(LowesColors.LowesBlue)
+            .background(AddressUIColors.PrimaryBlue)
             .padding(vertical = 16.dp, horizontal = 16.dp)
     ) {
         if (showBack) {
             TextButton(
                 onClick = onBack,
                 modifier = Modifier.align(Alignment.CenterStart),
-                colors = ButtonDefaults.textButtonColors(contentColor = LowesColors.White)
+                colors = ButtonDefaults.textButtonColors(contentColor = AddressUIColors.White)
             ) {
                 Text("← Back", fontWeight = FontWeight.Medium)
             }
@@ -387,17 +387,17 @@ private fun LowesHeaderWithBack(
             text = title,
             fontSize = if (showBack) 20.sp else 28.sp,
             fontWeight = FontWeight.Bold,
-            color = LowesColors.White,
+            color = AddressUIColors.White,
             modifier = Modifier.align(if (showBack) Alignment.Center else Alignment.CenterStart)
         )
     }
 }
 
 @Composable
-private fun LowesErrorBanner(message: String, onDismiss: () -> Unit) {
+private fun AddressUIErrorBanner(message: String, onDismiss: () -> Unit) {
     Surface(
         modifier = Modifier.fillMaxWidth(),
-        color = LowesColors.Error.copy(alpha = 0.1f)
+        color = AddressUIColors.Error.copy(alpha = 0.1f)
     ) {
         Row(
             modifier = Modifier.padding(12.dp),
@@ -405,22 +405,22 @@ private fun LowesErrorBanner(message: String, onDismiss: () -> Unit) {
         ) {
             Text(
                 text = message,
-                color = LowesColors.Error,
+                color = AddressUIColors.Error,
                 modifier = Modifier.weight(1f),
                 fontSize = 14.sp
             )
             TextButton(onClick = onDismiss) {
-                Text("✕", color = LowesColors.Error)
+                Text("✕", color = AddressUIColors.Error)
             }
         }
     }
 }
 
 @Composable
-private fun LowesSuccessBanner(message: String, onDismiss: () -> Unit) {
+private fun AddressUISuccessBanner(message: String, onDismiss: () -> Unit) {
     Surface(
         modifier = Modifier.fillMaxWidth(),
-        color = LowesColors.Success.copy(alpha = 0.1f)
+        color = AddressUIColors.Success.copy(alpha = 0.1f)
     ) {
         Row(
             modifier = Modifier.padding(12.dp),
@@ -428,19 +428,19 @@ private fun LowesSuccessBanner(message: String, onDismiss: () -> Unit) {
         ) {
             Text(
                 text = message,
-                color = LowesColors.Success,
+                color = AddressUIColors.Success,
                 modifier = Modifier.weight(1f),
                 fontSize = 14.sp
             )
             TextButton(onClick = onDismiss) {
-                Text("✕", color = LowesColors.Success)
+                Text("✕", color = AddressUIColors.Success)
             }
         }
     }
 }
 
 @Composable
-private fun LowesHomeContent(
+private fun AddressUIHomeContent(
     onAddAddress: () -> Unit,
     onViewAddresses: () -> Unit
 ) {
@@ -457,32 +457,32 @@ private fun LowesHomeContent(
             text = "Manage Your Addresses",
             fontSize = 24.sp,
             fontWeight = FontWeight.Bold,
-            color = LowesColors.TextPrimary,
+            color = AddressUIColors.TextPrimary,
             textAlign = TextAlign.Center
         )
 
         Text(
             text = "Save your delivery addresses for faster checkout",
             fontSize = 14.sp,
-            color = LowesColors.TextSecondary,
+            color = AddressUIColors.TextSecondary,
             textAlign = TextAlign.Center
         )
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        LowesButton(
+        AddressUIButton(
             text = "Add New Address",
             onClick = {
-                BingoSDK.trackEvent("lowes_add_address_clicked", emptyMap())
+                BingoSDK.trackEvent("add_address_clicked", emptyMap())
                 onAddAddress()
             },
             modifier = Modifier.fillMaxWidth()
         )
 
-        LowesOutlinedButton(
+        AddressUIOutlinedButton(
             text = "View Saved Addresses",
             onClick = {
-                BingoSDK.trackEvent("lowes_view_addresses_clicked", emptyMap())
+                BingoSDK.trackEvent("view_addresses_clicked", emptyMap())
                 onViewAddresses()
             },
             modifier = Modifier.fillMaxWidth()
@@ -493,13 +493,13 @@ private fun LowesHomeContent(
         Text(
             text = "Powered by Bingo SDK v${BingoSDK.VERSION}",
             fontSize = 12.sp,
-            color = LowesColors.TextSecondary
+            color = AddressUIColors.TextSecondary
         )
     }
 }
 
 @Composable
-private fun LowesAddAddressForm(
+private fun AddressUIAddAddressForm(
     isLoading: Boolean,
     onSubmit: (street: String, city: String, state: String, zipCode: String, isDefault: Boolean) -> Unit,
     onCancel: () -> Unit
@@ -520,17 +520,17 @@ private fun LowesAddAddressForm(
         Text(
             text = "Enter your delivery address",
             fontSize = 16.sp,
-            color = LowesColors.TextSecondary
+            color = AddressUIColors.TextSecondary
         )
 
-        LowesTextField(
+        AddressUITextField(
             value = street,
             onValueChange = { street = it },
             label = "Street Address",
             enabled = !isLoading
         )
 
-        LowesTextField(
+        AddressUITextField(
             value = city,
             onValueChange = { city = it },
             label = "City",
@@ -542,7 +542,7 @@ private fun LowesAddAddressForm(
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             Box(modifier = Modifier.weight(1f)) {
-                LowesTextField(
+                AddressUITextField(
                     value = state,
                     onValueChange = { state = it },
                     label = "State",
@@ -550,7 +550,7 @@ private fun LowesAddAddressForm(
                 )
             }
             Box(modifier = Modifier.weight(1f)) {
-                LowesTextField(
+                AddressUITextField(
                     value = zipCode,
                     onValueChange = { zipCode = it },
                     label = "ZIP Code",
@@ -568,13 +568,13 @@ private fun LowesAddAddressForm(
                 onCheckedChange = { isDefault = it },
                 enabled = !isLoading,
                 colors = CheckboxDefaults.colors(
-                    checkedColor = LowesColors.LowesBlue
+                    checkedColor = AddressUIColors.PrimaryBlue
                 )
             )
             Text(
                 text = "Set as default address",
                 fontSize = 14.sp,
-                color = LowesColors.TextPrimary
+                color = AddressUIColors.TextPrimary
             )
         }
 
@@ -583,14 +583,14 @@ private fun LowesAddAddressForm(
         if (isLoading) {
             CircularProgressIndicator(
                 modifier = Modifier.align(Alignment.CenterHorizontally),
-                color = LowesColors.LowesBlue
+                color = AddressUIColors.PrimaryBlue
             )
         } else {
-            LowesButton(
+            AddressUIButton(
                 text = "Save Address",
                 onClick = {
                     if (street.isNotBlank() && city.isNotBlank() && state.isNotBlank() && zipCode.isNotBlank()) {
-                        BingoSDK.trackEvent("lowes_address_submitted", mapOf(
+                        BingoSDK.trackEvent("address_submitted", mapOf(
                             "city" to city,
                             "state" to state
                         ))
@@ -601,7 +601,7 @@ private fun LowesAddAddressForm(
                 enabled = street.isNotBlank() && city.isNotBlank() && state.isNotBlank() && zipCode.isNotBlank()
             )
 
-            LowesOutlinedButton(
+            AddressUIOutlinedButton(
                 text = "Cancel",
                 onClick = onCancel,
                 modifier = Modifier.fillMaxWidth()
@@ -611,7 +611,7 @@ private fun LowesAddAddressForm(
 }
 
 @Composable
-private fun LowesAddressListContent(
+private fun AddressUIAddressListContent(
     addresses: List<SavedAddress>,
     onAddNew: () -> Unit,
     onDelete: (String) -> Unit,
@@ -636,10 +636,10 @@ private fun LowesAddressListContent(
                         text = "No addresses saved yet",
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Medium,
-                        color = LowesColors.TextSecondary
+                        color = AddressUIColors.TextSecondary
                     )
                     Spacer(modifier = Modifier.height(16.dp))
-                    LowesButton(
+                    AddressUIButton(
                         text = "Add Your First Address",
                         onClick = onAddNew
                     )
@@ -649,11 +649,11 @@ private fun LowesAddressListContent(
             Text(
                 text = "${addresses.size} saved address${if (addresses.size > 1) "es" else ""}",
                 fontSize = 14.sp,
-                color = LowesColors.TextSecondary
+                color = AddressUIColors.TextSecondary
             )
 
             addresses.forEach { address ->
-                LowesAddressCardWithActions(
+                AddressUIAddressCardWithActions(
                     address = address,
                     onDelete = { onDelete(address.id) },
                     onSetDefault = { onSetDefault(address.id) }
@@ -662,7 +662,7 @@ private fun LowesAddressListContent(
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            LowesOutlinedButton(
+            AddressUIOutlinedButton(
                 text = "Add Another Address",
                 onClick = onAddNew,
                 modifier = Modifier.fillMaxWidth()
@@ -672,14 +672,14 @@ private fun LowesAddressListContent(
 }
 
 @Composable
-private fun LowesAddressCardWithActions(
+private fun AddressUIAddressCardWithActions(
     address: SavedAddress,
     onDelete: () -> Unit,
     onSetDefault: () -> Unit
 ) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(containerColor = LowesColors.LightGray),
+        colors = CardDefaults.cardColors(containerColor = AddressUIColors.LightGray),
         shape = RoundedCornerShape(8.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
@@ -688,7 +688,7 @@ private fun LowesAddressCardWithActions(
                     text = "DEFAULT",
                     fontSize = 10.sp,
                     fontWeight = FontWeight.Bold,
-                    color = LowesColors.LowesBlue
+                    color = AddressUIColors.PrimaryBlue
                 )
                 Spacer(modifier = Modifier.height(4.dp))
             }
@@ -697,13 +697,13 @@ private fun LowesAddressCardWithActions(
                 text = address.street,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Medium,
-                color = LowesColors.TextPrimary
+                color = AddressUIColors.TextPrimary
             )
 
             Text(
                 text = "${address.city}, ${address.state} ${address.zipCode}",
                 fontSize = 14.sp,
-                color = LowesColors.TextSecondary
+                color = AddressUIColors.TextSecondary
             )
 
             Spacer(modifier = Modifier.height(12.dp))
@@ -712,14 +712,14 @@ private fun LowesAddressCardWithActions(
                 if (!address.isDefault) {
                     TextButton(
                         onClick = onSetDefault,
-                        colors = ButtonDefaults.textButtonColors(contentColor = LowesColors.LowesBlue)
+                        colors = ButtonDefaults.textButtonColors(contentColor = AddressUIColors.PrimaryBlue)
                     ) {
                         Text("Set Default", fontWeight = FontWeight.SemiBold)
                     }
                 }
                 TextButton(
                     onClick = onDelete,
-                    colors = ButtonDefaults.textButtonColors(contentColor = LowesColors.Error)
+                    colors = ButtonDefaults.textButtonColors(contentColor = AddressUIColors.Error)
                 ) {
                     Text("Delete", fontWeight = FontWeight.SemiBold)
                 }
@@ -731,45 +731,45 @@ private fun LowesAddressCardWithActions(
 // ==================== PREVIEWS ====================
 
 @Composable
-fun LowesAddressScreenPreview() {
-    LowesAddressScreen()
+fun AddressUIAddressScreenPreview() {
+    AddressUIAddressScreen()
 }
 
 @Composable
-fun LowesButtonPreview() {
-    LowesTheme {
+fun AddressUIButtonPreview() {
+    AddressUITheme {
         Column(
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            LowesButton(text = "Add New Address", onClick = {})
-            LowesButton(text = "Disabled Button", onClick = {}, enabled = false)
+            AddressUIButton(text = "Add New Address", onClick = {})
+            AddressUIButton(text = "Disabled Button", onClick = {}, enabled = false)
         }
     }
 }
 
 @Composable
-fun LowesOutlinedButtonPreview() {
-    LowesTheme {
+fun AddressUIOutlinedButtonPreview() {
+    AddressUITheme {
         Column(
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            LowesOutlinedButton(text = "View Addresses", onClick = {})
-            LowesOutlinedButton(text = "Disabled", onClick = {}, enabled = false)
+            AddressUIOutlinedButton(text = "View Addresses", onClick = {})
+            AddressUIOutlinedButton(text = "Disabled", onClick = {}, enabled = false)
         }
     }
 }
 
 @Composable
-fun LowesTextFieldPreview() {
-    LowesTheme {
+fun AddressUITextFieldPreview() {
+    AddressUITheme {
         Column(
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             var text by remember { mutableStateOf("") }
-            LowesTextField(
+            AddressUITextField(
                 value = text,
                 onValueChange = { text = it },
                 label = "Street Address"
@@ -779,20 +779,20 @@ fun LowesTextFieldPreview() {
 }
 
 @Composable
-fun LowesAddressCardPreview() {
-    LowesTheme {
+fun AddressUIAddressCardPreview() {
+    AddressUITheme {
         Column(
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            LowesAddressCard(
-                addressLine1 = "1000 Lowes Blvd",
+            AddressUIAddressCard(
+                addressLine1 = "1000 Main Blvd",
                 city = "Mooresville",
                 state = "NC",
                 zipCode = "28117",
                 isDefault = true
             )
-            LowesAddressCard(
+            AddressUIAddressCard(
                 addressLine1 = "123 Main Street",
                 addressLine2 = "Apt 4B",
                 city = "Charlotte",
@@ -804,11 +804,11 @@ fun LowesAddressCardPreview() {
 }
 
 @Composable
-fun LowesComponentsPreview() {
-    LowesTheme {
+fun AddressUIComponentsPreview() {
+    AddressUITheme {
         Surface(
             modifier = Modifier.fillMaxSize(),
-            color = LowesColors.White
+            color = AddressUIColors.White
         ) {
             Column(
                 modifier = Modifier.padding(16.dp),
@@ -818,29 +818,29 @@ fun LowesComponentsPreview() {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(LowesColors.LowesBlue)
+                        .background(AddressUIColors.PrimaryBlue)
                         .padding(vertical = 20.dp, horizontal = 24.dp),
                     contentAlignment = Alignment.CenterStart
                 ) {
                     Text(
-                        text = "Lowe's",
+                        text = "Address",
                         fontSize = 28.sp,
                         fontWeight = FontWeight.Bold,
-                        color = LowesColors.White
+                        color = AddressUIColors.White
                     )
                 }
 
                 // Buttons
-                LowesButton(text = "Primary Button", onClick = {})
-                LowesOutlinedButton(text = "Secondary Button", onClick = {})
+                AddressUIButton(text = "Primary Button", onClick = {})
+                AddressUIOutlinedButton(text = "Secondary Button", onClick = {})
 
                 // Text field
                 var text by remember { mutableStateOf("") }
-                LowesTextField(value = text, onValueChange = { text = it }, label = "Address")
+                AddressUITextField(value = text, onValueChange = { text = it }, label = "Address")
 
                 // Card
-                LowesAddressCard(
-                    addressLine1 = "1000 Lowes Blvd",
+                AddressUIAddressCard(
+                    addressLine1 = "1000 Main Blvd",
                     city = "Mooresville",
                     state = "NC",
                     zipCode = "28117",
