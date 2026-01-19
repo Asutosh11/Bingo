@@ -16,7 +16,8 @@ data class AddAddressRequest(
  */
 @Serializable
 data class AddAddressResponse(
-    val status: String
+    val id: Int? = null,
+    val status: String? = null
 )
 
 /**

@@ -33,6 +33,6 @@ object HttpClientFactory {
  * API endpoints configuration
  */
 object ApiConfig {
-    const val BASE_URL = "https://composekmp.free.beeceptor.com"
-    const val ADD_ADDRESS_ENDPOINT = "/addaddress"
+    const val BASE_URL = "https://jsonplaceholder.typicode.com"
+    const val ADD_ADDRESS_ENDPOINT = "/posts"
 }
