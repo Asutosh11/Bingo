@@ -1,5 +1,6 @@
 package com.example.bingo.ui
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -175,9 +176,7 @@ fun LowesOutlinedButton(
             contentColor = LowesColors.LowesBlue,
             disabledContentColor = LowesColors.TextSecondary
         ),
-        border = ButtonDefaults.outlinedButtonBorder.copy(
-            width = 2.dp
-        ),
+        border = BorderStroke(2.dp, LowesColors.LowesBlue),
         shape = RoundedCornerShape(4.dp)
     ) {
         Text(
