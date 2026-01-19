@@ -102,7 +102,9 @@ class LowesAddressViewModel {
                         )
                         
                         if (isDefault) {
-                            savedAddresses.replaceAll { it.copy(isDefault = false) }
+                            for (i in savedAddresses.indices) {
+                                savedAddresses[i] = savedAddresses[i].copy(isDefault = false)
+                            }
                         }
                         savedAddresses.add(newAddress)
                         
@@ -133,8 +135,8 @@ class LowesAddressViewModel {
     }
     
     fun setDefaultAddress(addressId: String) {
-        savedAddresses.replaceAll { 
-            it.copy(isDefault = it.id == addressId) 
+        for (i in savedAddresses.indices) {
+            savedAddresses[i] = savedAddresses[i].copy(isDefault = savedAddresses[i].id == addressId)
         }
         _uiState.value = _uiState.value.copy(
             addresses = savedAddresses.toList()
